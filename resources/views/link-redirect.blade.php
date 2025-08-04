@@ -2,10 +2,12 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-M-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url={{ $link->target_url }}">
+
     <title>{{ $link->og_title }}</title>
+
+    {{-- Meta Tags untuk Preview Link --}}
     <meta property="og:title" content="{{ $link->og_title }}">
     <meta property="og:description" content="{{ $link->og_description }}">
     @if($link->og_image)
@@ -16,8 +18,12 @@
 </head>
 
 <body>
-    <p>Sedang mengalihkan Anda ke tujuan...</p>
-    <script>window.location.href = "{{ $link->target_url }}";</script>
+    <p>Sedang mengalihkan ke tujuan...</p>
+
+    {{-- Redirect menggunakan JavaScript (Metode Terbaik) --}}
+    <script type="text/javascript">
+        window.location.href = "{{ $link->target_url }}";
+    </script>
 </body>
 
 </html>
