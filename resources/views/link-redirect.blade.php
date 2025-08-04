@@ -18,12 +18,9 @@
 </head>
 
 <body>
-    <p>Sedang mengalihkan ke tujuan...</p>
-
-    {{-- Redirect menggunakan JavaScript (Metode Terbaik) --}}
-    <script type="text/javascript">
-        window.location.href = "{{ $link->target_url }}";
-    </script>
+    {{-- Body bisa dibiarkan kosong atau berisi pesan untuk bot --}}
+    <h1>{{ $link->og_title }}</h1>
+    <p>{{ $link->og_description }}</p>
 </body>
 
 </html>
